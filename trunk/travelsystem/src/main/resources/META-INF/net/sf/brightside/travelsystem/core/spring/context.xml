@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+
+	<!-- ================= The default Collection implementations ==================-->
+	<bean id="java.util.Collection" class="java.util.ArrayList"
+		scope="prototype">
+	</bean>
+	<!-- ================= The default List implementation ==================-->
+	<bean id="java.util.List" class="java.util.ArrayList"
+		scope="prototype">
+	</bean>
+	<!-- ================= The efault Map implementation ==================-->
+	<bean id="java.util.Map" class="java.util.HashMap"
+		scope="prototype">
+	</bean>
+
+	<bean id="Object" class="java.lang.Object" scope="prototype"></bean>
+
+	</beans>
