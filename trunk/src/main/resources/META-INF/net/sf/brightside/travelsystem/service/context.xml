@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd">
+
+	<bean id="net.sf.brightside.travelsystem.service.RegisterPassenger"
+		class="net.sf.brightside.travelsystem.service.hibernate.RegisterPassengerImpl"
+		scope="singleton">
+		<property name="dao">
+			<ref
+				bean="net.sf.brightside.travelsystem.core.persistence.GenericDAO" />
+		</property>
+	</bean>
+
+	<bean id="net.sf.brightside.travelsystem.service.GetAllPassengers"
+		class="net.sf.brightside.travelsystem.service.hibernate.GetAllPassengersImpl"
+		scope="singleton">
+		<property name="dao">
+			<ref
+				bean="net.sf.brightside.travelsystem.core.persistence.GenericDAO" />
+		</property>
+	</bean>
+
+</beans>
