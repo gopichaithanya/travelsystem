@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html t:type="layout1" t:pageTitle="Search flight page" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+
+<div id="mainContent">
+<h2>Flight search, book online now!</h2>
+
+<form
+t:type="form"
+	t:id="searchform">
+<p>Departing from <select
+	t:type="select"
+	t:model="airports"
+	t:value="departureAirport" t:encoder="airportEncoder" t:validate="required"></select></p>
+<p>Going to <select
+	t:type="select"
+	t:model="airports"
+	t:value="arrivalAirport" t:encoder="airportEncoder" t:validate="required">
+</select></p>
+<p>Departing <input
+	type="text"
+	t:type="datefield"
+	t:value="departureDate" t:encoder="airportEncoder" t:validate="required"/></p>
+
+<p>Class <select
+	t:type="select"
+	t:model="cabinClasses"
+	t:value="cabinClass" t:encoder="cabinClassEncoder" t:validate="required">
+</select></p>
+<p>Preffered Airline <select
+	t:type="select"
+	t:model="airlines"
+	t:value="airline" t:encoder="airlineEncoder" t:validate="required">
+</select></p>
+<p><input
+	class="searchbutton"
+	type="submit"
+	value="Search" /></p>
+</form>
+
+<p>&nbsp;</p>
+</div>
+
+
+</html>

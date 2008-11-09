@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html
+	t:type="layout1"
+	t:pageTitle="Plain administration"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+
+<div id="mainContent">
+<h2>Plain administration</h2>
+<form t:type="form" t:id="plainform"><p>Plain name:&nbsp; 
+
+    <input
+	t:type="textfield"
+	t:value="plainname" t:validate="required"/>
+</p>
+
+<p>Plain type:&nbsp; 
+
+    <input
+	t:type="textfield"
+	t:value="typeofplain" t:validate="required"/>
+</p>
+
+<p><input
+	class="searchbutton"
+	t:type="Submit" value="Save plain"
+	/></p>
+	<t:errors/>
+</form>
+
+<p style="overflow: auto">
+<t:grid  rowsPerPage="5" t:source="plains" exclude="_uuid" add="Action" row="plain">
+<t:parameter name="ActionCell">
+<t:actionlink t:id="deleteplain" t:context="plain._id">
+delete
+</t:actionlink>
+</t:parameter>
+</t:grid>
+</p>
+<br/>
+</div>
+</html>

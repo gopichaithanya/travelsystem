@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<import resource="classpath:META-INF/net/sf/brightside/travelsystem/core/spring/context.xml"/>
+	<import resource="classpath:META-INF/net/sf/brightside/travelsystem/metamodel/context.xml"/>
+	<import resource="classpath:META-INF/net/sf/brightside/travelsystem/core/hsqldb/context.xml"/>
+	<import resource="classpath:META-INF/net/sf/brightside/travelsystem/core/hibernate/context.xml"/>
+	<import resource="classpath:META-INF/net/sf/brightside/travelsystem/service/context.xml"/>
+	
+</beans>

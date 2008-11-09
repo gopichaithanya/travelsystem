@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html
+	t:type="layout1"
+	t:pageTitle="Flight details"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+
+<div id="mainContent">
+<h2>Flight details</h2>
+<p>&nbsp;</p>
+
+<p>
+<table
+	border="0"
+	cellpadding="5"
+	cellspacing="0"
+	class="flighttableheader">
+	<th class="flighttableheader">Airline</th>
+	<th class="flighttableheader">From</th>
+	<th class="flighttableheader">To</th>
+	<th class="flighttableheader">Departure</th>
+	<th class="flighttableheader">Arrival</th>
+	<th class="flighttableheader">Flight no.</th>
+	<th class="flighttableheader">Class</th>
+	<th class="flighttableheader">Price</th>
+	
+
+
+	<tr
+		t:type="loop"
+		t:source="reservations"
+		t:value="reservation"
+		class="flighttablecell">
+		<td>${reservation.flight.airline.name}</td>
+
+		<td>${reservation.flight.departureAirport.city.name},
+		${reservation.flight.departureAirport.name},
+		${reservation.flight.departureAirport.code}</td>
+
+		<td>
+		${reservation.flight.arrivalAirport.city.name},${reservation.flight.arrivalAirport.name},
+		${reservation.flight.arrivalAirport.code}</td>
+		<td>${reservation.flight.departureTime}</td>
+
+		<td>${reservation.flight.arrivalTime}</td>
+
+		<td>${reservation.flight.number}</td>
+
+		<td>${reservation.cabinClass.cabinClass}</td>
+		<td>${reservation.price}</td>
+		
+	</tr>
+
+
+</table>
+</p>
+<br />
+<form
+	t:type="form"
+	t:id="bookflightform">
+<p>Select meal <select
+	t:type="select"
+	t:value="meal"
+	t:encoder="mealencoder"
+	t:model="meals">
+
+</select> &nbsp;</p>
+
+
+<p class="style2">Credit card details</p>
+
+<p>Pay by Credit Card &nbsp;&nbsp;&nbsp;&nbsp; <t:radiogroup t:value="creditcardtype" t:validate="required" >
+
+	<input
+		type="radio"
+		t:type="radio"
+		t:value="literal:visa" t:validate="required"/>
+	<img
+		src="resources/visa_n1.gif"
+		alt="visa"
+		width="26"
+		height="16" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;
+                        <input
+		type="radio"
+		t:type="radio"
+		t:value="literal:mastercard"  />
+	<img
+		src="resources/master_n1.gif"
+		alt="mastercard"
+		width="26"
+		height="16" />&nbsp;&nbsp;
+                        &nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;
+                        <input
+		type="radio"
+		t:type="radio"
+		t:value="literal:americanexpress"  />
+
+
+	<img
+		src="resources/amex-n1.gif"
+		alt="american express"
+		width="16"
+		height="16" />
+</t:radiogroup></p>
+
+<p>Card number <input
+	type="text"
+	t:type="textfield"
+	t:value="cardnumber"
+	 /></p>
+<p>Card Verification Code <input
+	type="text"
+	t:type="textfield"
+	t:value="cardVerificationCode"/></p>
+<p>Name on card <input
+	type="text"
+	t:type="textfield"
+	t:value="nameoncard"/></p>
+<p>&nbsp; <input
+	class="searchbutton"
+	type="submit"
+	name="submit"
+	value="Pay and book flight" /></p>
+</form>
+
+<p>&nbsp;</p>
+</div>
+
+</html>

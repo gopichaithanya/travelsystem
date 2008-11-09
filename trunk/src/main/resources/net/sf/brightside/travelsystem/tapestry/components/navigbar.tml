@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+<div class="logininfo"><t:if t:test="passengerExists">
+	
+	<div style="text-align: right;"><br />Welcome ${passenger.firstName}
+	${passenger.lastName}, (<a
+		href="#"
+		t:type="pagelink"
+		t:page="logout">logout</a>), (<a
+		href="#"
+		t:type="pagelink"
+		t:page="profile">profile</a>)</div>
+	<br />
+	<div
+		style="text-align: left; background: rgb(105, 131, 134); color: white"><br />
+	<a
+		href="#"
+		style="color: threedface; font-size: medium"
+		t:type="pagelink"
+		t:page="searchflights">Search page</a> --- <a
+		href="#"
+		t:type="pagelink"
+		style="color: threedface; font-size: medium"
+		t:page="administration/adminpage">Administration page</a><br />
+	<br />
+	</div>
+	<br />
+	<t:parameter t:name="else">
+		<div style="text-align: right;"><br />Welcome guest please (<a
+			href="#"
+			t:type="pagelink"
+			t:page="login">login</a>), if you are not registered please (<a
+			href="#"
+			t:type="pagelink"
+			t:page="register">register</a>)</div>
+		<br />
+	</t:parameter>
+</t:if></div>
+</html>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html t:type="layout1" t:pageTitle="Register" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+
+<div id="mainContent">
+<h2>Registration info</h2>
+
+<form
+	t:type="form"
+	t:id="registrationform">
+<p>Firstname <input
+	t:type="textfield"
+	t:value="firstname" t:validate="required" /></p>
+<p>Lastname <input
+	t:type="textfield"
+	t:value="lastname" t:validate="required"/></p>
+<p>Title <select
+	t:type="select"
+	t:model="titles"
+	t:value="title" t:validate="required">
+
+</select></p>
+<p>Date of birth <input
+	t:type="datefield"
+	t:value="dateofbirth" t:validate="required"/></p>
+Username <input
+	t:type="textfield"
+	t:value="username"
+	t:validate="required" /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+
+<p>Password <input
+	type="password"
+	t:type="passwordfield"
+	t:value="password" t:validate="required" /></p>
+<p><input
+	class="searchbutton"
+	t:type="submit"
+	value="Register" /></p>
+<div style="color: red;">${message}</div>
+</form>
+</div>
+
+</html>

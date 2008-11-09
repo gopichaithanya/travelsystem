@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html
+	t:type="layout1"
+	t:pageTitle="Administration page"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+
+<div id="mainContent">
+<h2>Admintration page</h2>
+<p><a style="color: threedface" href="#" t:type="pagelink" t:page="administration/plainpage">Add plain</a></p>
+<p><a style="color: threedface" href="#" t:type="pagelink" t:page="administration/seatpage">Add seat</a></p>
+<p><a style="color: threedface" href="#" t:type="pagelink" t:page="administration/citypage">Add city</a></p>
+<p><a style="color: threedface" href="#" t:type="pagelink" t:page="administration/airportpage">Add airport</a></p>
+<p><a style="color: threedface" href="#" t:type="pagelink" t:page="administration/airlinepage">Add airline company</a></p>
+<p><a style="color: threedface" href="#" t:type="pagelink" t:page="administration/cabinclasspage">Add cabin class</a></p>
+<p><a style="color: threedface" href="#" t:type="pagelink" t:page="administration/mealpage">Add meal</a></p>
+<p><a style="color: threedface" href="#" t:type="pagelink" t:page="administration/flightcreation">Create flight route</a></p>
+<p><a style="color: threedface" href="#" t:type="pagelink" t:page="administration/reservationcreation">Create reservation (issue a ticket)</a></p>
+
+
+</div>
+</html>

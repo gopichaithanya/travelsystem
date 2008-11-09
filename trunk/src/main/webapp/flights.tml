@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html
+	t:type="layout1" t:pageTitle="Flight search result"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+
+<div id="mainContent">
+<h2>Flight search result</h2>
+<p>&nbsp;</p>
+
+<p>
+<table
+	border="0"
+	cellpadding="5"
+	cellspacing="0"
+	class="flighttableheader">
+	<th class="flighttableheader">Airline</th>
+	<th class="flighttableheader">From</th>
+	<th class="flighttableheader">To</th>
+	<th class="flighttableheader">Departure</th>
+	<th class="flighttableheader">Arrival</th>
+	<th class="flighttableheader">Flight no.</th>
+	<th class="flighttableheader">Class</th>
+	<th class="flighttableheader">Price</th>
+	<th class="flighttableheader">Select flight</th>
+
+
+	<tr
+		t:type="loop"
+		t:source="reservations"
+		t:value="reservation"
+		class="flighttablecell">
+		<td>${reservation.flight.airline.name}</td>
+
+		<td>${reservation.flight.departureAirport.city.name},
+		${reservation.flight.departureAirport.name},
+		${reservation.flight.departureAirport.code}</td>
+
+		<td>
+		${reservation.flight.arrivalAirport.city.name},${reservation.flight.arrivalAirport.name},
+		${reservation.flight.arrivalAirport.code}</td>
+		<td>${reservation.flight.departureTime}</td>
+
+		<td>${reservation.flight.arrivalTime}</td>
+
+		<td>${reservation.flight.number}</td>
+
+		<td>${reservation.cabinClass.cabinClass}</td>
+		<td>${reservation.price}</td>
+		<td><a
+			style="color: threedface"
+			href="#"
+			t:type="ActionLink"
+			t:context="reservation.flight._id"
+			t:id="bookflight">book this flight</a></td>
+	</tr>
+
+
+</table>
+</p>
+<p style="color: red">${infoAboutReservations}</p>
+<p>&nbsp;</p>
+</div>
+
+</html>

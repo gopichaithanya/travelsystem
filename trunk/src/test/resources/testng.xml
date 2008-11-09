@@ -1,0 +1,24 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="travelsystem app tests" verbose="1">
+	<test name="unit tests">
+		<packages>
+			<package
+				name="net.sf.brightside.travelsystem.metamodel.beans.*" />
+			<package
+				name="net.sf.brightside.travelsystem.core.hibernate.*" />
+		</packages>
+
+	</test>
+	<test name="integration tests">
+		<packages>
+			<package
+				name="net.sf.brightside.travelsystem.core.spring.*" />
+			<package
+				name="net.sf.brightside.travelsystem.service.facade.hibernate.integration" />
+		<package
+				name="net.sf.brightside.travelsystem.metamodel.beans.spring.integration.*" />
+		
+		</packages>
+	</test>
+</suite>
