@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html
+	t:type="layout1"
+	t:pageTitle="Cabin class administration"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+
+<div id="mainContent">
+<h2>Cabin class administration</h2>
+<form t:type="form" t:id="cabinclassform"><p>Cabin class:&nbsp; 
+
+    <input
+	t:type="textfield"
+	t:value="cabinclassname" t:validate="required"/>
+</p>
+
+<p><input
+	class="searchbutton"
+	t:type="Submit" value="Save cabin class"
+	/></p>
+	<t:errors/>
+</form>
+
+<p style="overflow: auto">
+<t:grid  rowsPerPage="5" t:source="cabinclasses" exclude="_uuid" add="Action" row="cabinclass">
+<t:parameter name="ActionCell">
+<t:actionlink t:id="deletecabinclass" t:context="cabinclass._id">
+delete
+</t:actionlink>
+</t:parameter>
+</t:grid>
+</p>
+<br/>
+</div>
+</html>

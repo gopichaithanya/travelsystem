@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html t:type="layout1" t:pageTitle="Flight creation page" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+
+<div id="mainContent">
+<h2>Flight creation</h2>
+
+<form
+t:type="form"
+	t:id="flightcreationform">
+	<p>Flight number <input
+	t:type="textfield"
+	
+	t:value="flightNumber" t:validate="required"/></p>
+<p>Departing from: <select
+	t:type="select"
+	t:model="airports"
+	t:value="departureAirport" t:encoder="airportEncoder" t:validate="required"></select></p>
+<p>Going to: <select
+	t:type="select"
+	t:model="airports"
+	t:value="arrivalAirport" t:encoder="airportEncoder" t:validate="required">
+</select></p>
+<p>Departing  time: <input
+	type="text"
+	t:type="datefield"
+	t:value="departureDate"  t:validate="required"/></p>
+<p>Arriving time: <input
+	type="text"
+	t:type="datefield"
+	t:value="arrivalDate"  t:validate="required"/></p>
+
+<p> Airline: <select
+	t:type="select"
+	t:model="airlines"
+	t:value="airline" t:encoder="airlineEncoder" t:validate="required">
+</select></p>
+<p> Plain: <select
+	t:type="select"
+	t:model="plains"
+	t:value="plain" t:encoder="plainEncoder" t:validate="required">
+</select></p>
+<p><input
+	class="searchbutton"
+	type="submit"
+	value="Create flight" /></p>
+</form>
+<p style="overflow: auto">
+<t:grid  rowsPerPage="5" t:source="flights" exclude="_uuid,formatedArrivalTime,formatedDepartureTime"  add="DepartureAirport, ArrivalAirport,Plain,Action" row="flight">
+<t:parameter name="ActionCell">
+<t:actionlink t:id="deleteflight" t:context="flight._id">
+delete
+</t:actionlink>
+</t:parameter>
+<t:parameter name="DepartureAirportCell">
+${flight.departureAirport}
+</t:parameter>
+<t:parameter name="ArrivalAirportCell">
+${flight.arrivalAirport}
+</t:parameter>
+<t:parameter name="AirlineCell">
+${flight.airline}
+</t:parameter>
+<t:parameter name="PlainCell">
+${flight.plain}
+</t:parameter>
+</t:grid>
+</p>
+<p>&nbsp;</p>
+</div>
+
+
+</html>

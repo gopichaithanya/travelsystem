@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+<head>
+<meta
+	http-equiv="Content-Type"
+	content="text/html; charset=UTF-8" />
+<title>${pageTitle}</title>
+
+</head>
+<body class="oneColLiqCtrHdr">
+<div id="container">
+<div id="header"><!-- end #header -->
+<center><a
+	href="#"
+	t:type="pageLink"
+	t:page="index"> <img
+	src="${header}"
+	alt="header"
+	width="768"
+	height="136"
+	align="middle" /> </a></center>
+<br />
+<t:navigbar/>
+
+<br />
+</div>
+<t:body />
+<div id="footer"><br />
+<div class="footerinfo">Travel agency. Copyright &copy;. Nikola
+Nikolic. 2008.</div>
+</div>
+</div>
+</body>
+</html>

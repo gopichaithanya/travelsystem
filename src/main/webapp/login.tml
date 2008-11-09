@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html t:type="layout1" t:pageTitle="Login" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+
+
+<div id="mainContent">
+<h2>Log in</h2>
+
+<p>In order to use our services you must log in.</p>
+
+<br/>
+
+<form t:type="form" t:id="loginform"><p>Username:&nbsp; 
+
+    <input
+	t:type="textfield"
+	t:value="username" t:validate="required"/>
+</p>
+<p>Password:&nbsp;&nbsp; <input
+	
+	t:type="passwordfield"
+	t:value="password" t:validate="required"/></p>
+<p><input
+	class="searchbutton"
+	t:type="Submit" value="Log in"
+	/></p>
+	<t:errors/>
+</form>
+<div style="color: red;">${message}</div>
+
+<p>&nbsp;</p>
+</div>
+
+</html>

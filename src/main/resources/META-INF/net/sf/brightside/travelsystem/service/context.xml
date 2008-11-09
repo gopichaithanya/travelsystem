@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd">
+
+
+
+	<bean
+		id="net.sf.brightside.travelsystem.service.facade.RegisterPassenger"
+		class="net.sf.brightside.travelsystem.service.facade.hibernate.RegisterPassengerImpl"
+		scope="singleton">
+
+		<property name="persistenceManager">
+			<ref
+				bean="net.sf.brightside.travelsystem.core.persistence.PersistenceManager" />
+		</property>
+		
+	</bean>
+
+	<bean id="net.sf.brightside.travelsystem.service.facade.BookFlight"
+		class="net.sf.brightside.travelsystem.service.facade.hibernate.BookFlightImpl"
+		scope="singleton">
+
+		<property name="persistenceManager">
+			<ref
+				bean="net.sf.brightside.travelsystem.core.persistence.PersistenceManager" />
+		</property>
+		<property name="paymentService">
+			<ref
+				bean="net.sf.brightside.travelsystem.service.facade.Payment" />
+		</property>
+	</bean>
+
+	<bean
+		id="net.sf.brightside.travelsystem.service.facade.LoginPassenger"
+		class="net.sf.brightside.travelsystem.service.facade.hibernate.LoginPassengerImpl"
+		scope="singleton">
+
+		<property name="persistenceManager">
+			<ref
+				bean="net.sf.brightside.travelsystem.core.persistence.PersistenceManager" />
+		</property>
+	</bean>
+
+	<bean
+		id="net.sf.brightside.travelsystem.service.facade.SearchFlights"
+		class="net.sf.brightside.travelsystem.service.facade.hibernate.SearchFlightsImpl"
+		scope="singleton">
+
+		<property name="persistenceManager">
+			<ref
+				bean="net.sf.brightside.travelsystem.core.persistence.PersistenceManager" />
+		</property>
+	</bean>
+
+	<bean
+		id="net.sf.brightside.travelsystem.service.facade.ViewReservations"
+		class="net.sf.brightside.travelsystem.service.facade.hibernate.ViewReservationsImpl"
+		scope="singleton">
+
+		<property name="persistenceManager">
+			<ref
+				bean="net.sf.brightside.travelsystem.core.persistence.PersistenceManager" />
+		</property>
+	</bean>
+	
+	<bean
+		id="net.sf.brightside.travelsystem.service.facade.AdministrationService"
+		class="net.sf.brightside.travelsystem.service.facade.hibernate.AdministrationServiceImpl"
+		scope="singleton">
+
+		<property name="persistenceManager">
+			<ref
+				bean="net.sf.brightside.travelsystem.core.persistence.PersistenceManager" />
+		</property>
+	</bean>
+	
+	<bean
+		id="net.sf.brightside.travelsystem.service.facade.Payment"
+		class="net.sf.brightside.travelsystem.service.facade.hibernate.PaymentImpl"
+		scope="singleton">
+
+		<property name="persistenceManager">
+			<ref
+				bean="net.sf.brightside.travelsystem.core.persistence.PersistenceManager" />
+		</property>
+	</bean>
+
+
+</beans>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html
+	t:type="layout1"
+	t:pageTitle="Reservation administration"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+
+<div id="mainContent">
+<h2>Airport administration</h2>
+<form
+	t:type="form"
+	t:id="reservationform">
+<p>Cabin class: <select
+	t:type="select"
+	t:model="cabinClasses"
+	t:value="cabinClass"
+	t:encoder="cabinClassEncoder"
+	t:validate="required"></select></p>
+<p>Flight: <select 
+	t:type="select"
+	t:model="flights"
+	t:value="flight"
+	t:encoder="flightEncoder"
+	t:validate="required"></select> <input
+	t:type="submit"
+	t:id="submitflight"
+	value="Submit flight"
+	class="searchbutton" /></p>
+<p>Seat: <select
+	t:type="select"
+	t:model="seats"
+	t:value="seat"
+	t:encoder="seatEncoder"></select></p>
+<p>Price:&nbsp; <input
+	t:type="textfield"
+	t:value="price" /></p>
+
+<p><input
+	class="searchbutton"
+	t:type="Submit"
+	value="Create reservation" /></p>
+<p style="color: red">${message}</p>
+<t:errors /></form>
+<p style="overflow: auto"><t:grid
+	rowsPerPage="5"
+	t:source="reservations"
+	exclude="_uuid,formatedReservationTime"
+	add="Seat,Plain,flight, Action"
+	row="reservation">
+	<t:parameter name="ActionCell">
+		<t:actionlink
+			t:id="deletereservation"
+			t:context="reservation._id">
+delete
+</t:actionlink>
+	</t:parameter>
+	<t:parameter name="seatCell">
+		${reservation.seat.number}
+	</t:parameter>
+	<t:parameter name="plainCell">
+		${reservation.seat.plain}
+	</t:parameter>
+		<t:parameter name="flightCell">
+		${reservation.flight}
+	</t:parameter>
+
+</t:grid></p>
+<br />
+</div>
+</html>
