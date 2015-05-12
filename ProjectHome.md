@@ -1,0 +1,2 @@
+This is an application for school project at Fon faculty at Belgrade. Application summarize best practices and patterns (command, facade, mvc, IoC) along with frameworks like spring and hibernate.Project is developing using maven build tool. It is tested with testng framework. If you wanna see how real enterprise application is structured check it out.
+Project is still in development faze, and it changes rapidly!!!
